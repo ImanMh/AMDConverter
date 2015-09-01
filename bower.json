@@ -1,0 +1,24 @@
+{
+  "name": "AMDConverter",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ImanMh/AMDConverter",
+  "authors": [
+    "Iman Mohamadi <iman.mohamadi.dev@gmail.com>"
+  ],
+  "description": "Converts regular modules into AMD (RequireJS Compatible) modules",
+  "main": "index.html",
+  "keywords": [
+    "AMD",
+    "converter",
+    "requirejs",
+    "javascript"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
