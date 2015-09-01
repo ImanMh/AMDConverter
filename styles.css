@@ -212,3 +212,13 @@ html, body {
 .mdl-demo .mdl-menu__container {
   z-index: 99;
 }
+
+.custom-footer {
+  padding-top: 70px;
+  text-align: center;
+}
+
+.custom-attention {
+  width: 300px;
+  height: 60px;
+}
