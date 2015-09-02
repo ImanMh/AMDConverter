@@ -29,7 +29,7 @@
   });
 
   $('#newScript').click(function () {
-    document.location = '/';
+    document.location = document.location.href;
   });
 
   function transitionToOutput () {
