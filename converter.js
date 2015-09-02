@@ -10,6 +10,20 @@
     renderApiStep(newKeys);
   });
 
+  $('#convert-script').click(function () {
+    var scriptBody = $('#source').val();
+    var deps = $('#deps').val();
+    var chosenMethods = $('#step-api [type=checkbox]:checked');
+    var apiMethods = [];
+    chosenMethods.each(function (i, checkbox) {
+      var $checkbox = $(checkbox);
+      if ($checkbox.prop('checked') === true)
+        apiMethods.push($checkbox.data('var-name'));
+    });
+
+    convertToAMD(scriptBody, deps, apiMethods);
+  });
+
   function renderApiStep (newKeys) {
     var tmpl = $('#api-methods-tmpl').html();
     $('#api-methods').empty();

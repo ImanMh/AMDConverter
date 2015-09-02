@@ -65,14 +65,14 @@
               <p>Choose which variables you want to be visible in your module interface.</p>
               <template id="api-methods-tmpl">
                 <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="{{methodName}}">
-                  <input type="checkbox" id="{{methodName}}" data-var-name="testGlobal" class="mdl-checkbox__input" />
+                  <input type="checkbox" id="{{methodName}}" data-var-name="{{methodName}}" class="mdl-checkbox__input" />
                   <span class="mdl-checkbox__label">{{methodName}}</span>
                 </label>
               </template>
               <div id="api-methods" style="display:block;">
               </div>
               <div class="custom-footer mdl-cell--12-col">
-                <button class="mdl-js-ripple-effect mdl-button mdl-js-button mdl-button--raised mdl-button--colored custom-attention">
+                <button id="convert-script" class="mdl-js-ripple-effect mdl-button mdl-js-button mdl-button--raised mdl-button--colored custom-attention">
                   Convert
                 </button>
               </div>
