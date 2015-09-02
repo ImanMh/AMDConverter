@@ -9,6 +9,7 @@
     var newKeys = detectApi(inputSource);
     transitionToChooseAPI();
     renderApiStep(newKeys);
+    $(this).prop('disabled', true);
   });
 
   $('#convert-script').click(function () {
@@ -30,7 +31,7 @@
   });
 
   $('#newScript').click(function () {
-    document.location.reload();
+    document.location = '/';
   });
 
   function transitionToOutput () {
