@@ -1,5 +1,17 @@
 (function () {
   var ui_delay_ms = 500;
+  var beautifyOptions = {
+    indent_size: 4,
+    indent_char: ' ',
+    preserve_newlines: true,
+    jslint_happy: false,
+    keep_array_indentation: false,
+    brace_style: 'collapse',
+    space_before_conditional: true,
+    break_chained_methods: false,
+    selector_separator: '\n',
+    end_with_newline: false
+  };
 
   $('#detectApi').click(function () {
     resetView();
@@ -23,9 +35,9 @@
     });
 
     var converted = convertToAMD(scriptBody, deps, names, apiMethods);
-    $('#output-code').html(converted);
+    $('#code-preview').html(js_beautify(converted, beautifyOptions));
+    Prism.highlightElement($('#code-preview')[0]);
     transitionToOutput();
-
   });
 
   $('#newScript').click(function () {

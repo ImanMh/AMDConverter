@@ -6,6 +6,8 @@
   <title>AMD Converter</title>
   <link rel="stylesheet" href="lib/material-design-lite/material.min.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="lib/prism/themes/prism.css">
+  <link rel="stylesheet" href="lib/prism/themes/prism-coy.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="icon" type="image/png" href="logo.png" />
   <script src="lib/material-design-lite/material.min.js"></script>
@@ -92,12 +94,7 @@
             <div class="mdl-card__supporting-text">
               <h4>AMD Output</h4>
               Here is the AMD version of your module.
-              <code>
-                <pre id="output-code">
-  function () {
-    var a = 1;
-  }
-                </pre>
+              <code id="code-preview" class="language-javascript">
               </code>
               <div class="custom-footer">
                 <button id="newScript" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent custom-attention">
@@ -151,6 +148,8 @@
     </main>
   </div>
   <script src="lib/jquery/dist/jquery.min.js"></script>
+  <script src="lib/js-beautify/js/lib/beautify.js"></script>
+  <script src="lib/prism/prism.js"></script>
   <script src="converter.js"></script>
 </body>
 

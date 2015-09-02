@@ -234,3 +234,8 @@ html, body {
   display: none;
   visibility: hidden;
 }
+#code-preview {
+  border: 0;
+  margin-top: 20px;
+  padding: 20px;
+}
