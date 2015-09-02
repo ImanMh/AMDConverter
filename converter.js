@@ -1,5 +1,3 @@
-
-
 (function () {
   var ui_delay_ms = 500;
 
