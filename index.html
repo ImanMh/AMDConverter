@@ -46,7 +46,13 @@
               <form action="#">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <input class="mdl-textfield__input" type="text" id="deps" />
-                  <label class="mdl-textfield__label" for="deps">dep1,dep2,dep3</label>
+                  <label class="mdl-textfield__label" for="deps">M1,M2,M3</label>
+                </div>
+                <br>
+                <p>If you need to rename your dependencies specify the internal names here.</p>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="text" id="names" />
+                  <label class="mdl-textfield__label" for="names">renamedM1, renamedM2, renamedM3...</label>
                 </div>
               </form>
               <div class="custom-footer">
@@ -58,11 +64,11 @@
             </div>
           </div>
         </section>
-        <section id="step-api" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+        <section id="step-api" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" style="display:none;">
           <div class="mdl-card mdl-cell mdl-cell--12-col">
             <div id="api" class="mdl-card__supporting-text mdl-grid--no-spacing">
-              <h4 class="">Visibles</h4>
-              <p>Choose which variables you want to be visible in your module interface.</p>
+              <h4 class="">Public API</h4>
+              <p>Choose which methods and variables you want to make visible in your module interface.</p>
               <template id="api-methods-tmpl">
                 <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="{{methodName}}">
                   <input type="checkbox" id="{{methodName}}" data-var-name="{{methodName}}" class="mdl-checkbox__input" />
@@ -76,31 +82,34 @@
                   Convert
                 </button>
               </div>
-              <div id="p2" class="hidden custom-progress mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+              <div id="step-api-progress" class="hidden custom-progress mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
             </div>
           </div>
         </section>
-        <section id="step-output" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+        <section id="step-output" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" style="display:none;">
           <div class="mdl-card mdl-cell mdl-cell--12-col">
             <div class="mdl-card__supporting-text">
               <h4>AMD Output</h4>
               Here is the AMD version of your module.
               <code>
-                <pre>
+                <pre id="output-code">
   function () {
     var a = 1;
   }
                 </pre>
               </code>
+              <div class="custom-footer">
+                <button id="newScript" class="mdl-js-ripple-effect mdl-button mdl-js-button mdl-button--raised mdl-button--colored custom-attention">
+                  New Script
+                </button>
+              </div>
             </div>
           </div>
           <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
             <i class="material-icons">more_vert</i>
           </button>
           <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn3">
-            <li class="mdl-menu__item">Lorem</li>
-            <li class="mdl-menu__item" disabled>Ipsum</li>
-            <li class="mdl-menu__item">Dolor</li>
+            <li class="mdl-menu__item">Copy to clipboard</li>
           </ul>
         </section>
         <section class="section--footer mdl-color--white mdl-grid">
