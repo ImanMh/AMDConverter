@@ -28,20 +28,21 @@
     </header>
     <main class="mdl-layout__content">
       <div class="mdl-layout__tab-panel is-active" id="overview">
-        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+        <section id="step-input" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
           <div class="mdl-card mdl-cell mdl-cell--12-col">
             <div class="mdl-card__supporting-text">
               <h4>Input Scripts</h4>
-              Type the name of the script you want to convert. <br><br>
+              Copy paste your script source here. <br><br>
+              <!-- Floating Multiline Textfield -->
               <form action="#">
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                  <input class="mdl-textfield__input" type="text" id="path" />
-                  <label class="mdl-textfield__label" for="path">script_file_name.js</label>
+                <div class="mdl-textfield mdl-js-textfield custom-full-width">
+                  <textarea class="mdl-textfield__input" type="text" cols="20" rows= "10" id="source" ></textarea>
+                  <label class="mdl-textfield__label" for="source">Javascript code ...</label>
                 </div>
               </form>
               <br><br>
               <h4>Dependencies</h4>
-              Define this module dependencies. If it has multiple dependencies, use cama seperated list. You can also leave this blank.<br><br>
+              Define this module dependencies. If it has multiple dependencies, use a cama seperated list. You can also leave this field blank.<br><br>
               <form action="#">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                   <input class="mdl-textfield__input" type="text" id="deps" />
@@ -49,33 +50,37 @@
                 </div>
               </form>
               <div class="custom-footer">
-                <button class="mdl-js-ripple-effect mdl-button mdl-js-button mdl-button--raised mdl-button--colored custom-attention">
+                <button id="detectApi" class="mdl-js-ripple-effect mdl-button mdl-js-button mdl-button--raised mdl-button--colored custom-attention">
                   Detect
                 </button>
               </div>
+              <div id="step-input-progress" class="hidden custom-progress mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
             </div>
           </div>
         </section>
-        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+        <section id="step-api" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
           <div class="mdl-card mdl-cell mdl-cell--12-col">
-            <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
-              <h4 class="mdl-cell mdl-cell--12-col">Visibles</h4>
+            <div id="api" class="mdl-card__supporting-text mdl-grid--no-spacing">
+              <h4 class="">Visibles</h4>
               <p>Choose which variables you want to be visible in your module interface.</p>
-
-              <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
-                <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" checked />
-                <span class="mdl-checkbox__label">testGlobal</span>
-              </label>
-
+              <template id="api-methods-tmpl">
+                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="{{methodName}}">
+                  <input type="checkbox" id="{{methodName}}" data-var-name="testGlobal" class="mdl-checkbox__input" />
+                  <span class="mdl-checkbox__label">{{methodName}}</span>
+                </label>
+              </template>
+              <div id="api-methods" style="display:block;">
+              </div>
               <div class="custom-footer mdl-cell--12-col">
                 <button class="mdl-js-ripple-effect mdl-button mdl-js-button mdl-button--raised mdl-button--colored custom-attention">
                   Convert
                 </button>
               </div>
+              <div id="p2" class="hidden custom-progress mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
             </div>
           </div>
         </section>
-        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+        <section id="step-output" class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
           <div class="mdl-card mdl-cell mdl-cell--12-col">
             <div class="mdl-card__supporting-text">
               <h4>AMD Output</h4>

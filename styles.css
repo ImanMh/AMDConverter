@@ -217,8 +217,20 @@ html, body {
   padding-top: 70px;
   text-align: center;
 }
-
 .custom-attention {
   width: 300px;
   height: 60px;
+}
+.custom-progress {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}
+.custom-full-width {
+  width: 100%;
+}
+.hidden {
+  display: none;
+  visibility: hidden;
 }
