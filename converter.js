@@ -1,3 +1,5 @@
+window.AMDConverter = {};
+
 (function () {
   var ui_delay_ms = 500;
   var beautifyOptions = {
@@ -35,13 +37,18 @@
     });
 
     var converted = convertToAMD(scriptBody, deps, names, apiMethods);
-    $('#code-preview').html(js_beautify(converted, beautifyOptions));
+    window.AMDConverter.tidyUped = js_beautify(converted, beautifyOptions);
+    $('#code-preview').html(window.AMDConverter.tidyUped);
     Prism.highlightElement($('#code-preview')[0]);
     transitionToOutput();
   });
 
   $('#newScript').click(function () {
     document.location = document.location.href;
+  });
+
+  $('#copy-output').click(function () {
+    window.prompt("Copy to clipboard: Ctrl+C, Enter", window.AMDConverter.tidyUped);
   });
 
   function transitionToOutput () {
@@ -94,7 +101,7 @@
       '{{body}}\n' +
       'return {\n' +
         '{{api}}\n' +
-      '}\n' +
+      '};\n' +
     '});\n';
     var apiMethods = "";
 
