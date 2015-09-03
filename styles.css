@@ -234,8 +234,30 @@ html, body {
   display: none;
   visibility: hidden;
 }
+.custom-centered {
+  margin: 0 auto;
+}
 #code-preview {
   border: 0;
   margin-top: 20px;
   padding: 20px;
+}
+#about-author {
+  position: relative;
+  height: 350px;
+  width: 50%;
+  margin: 70px auto 0 auto;
+}
+#about-author .custom-caption {
+  display: inline-block;
+  width: 70%;
+  margin-left: 250px;
+  position: absolute;
+  top: 25%;
+}
+#about-author .custom-avatar {
+  border-radius: 200px;
+  position: absolute;
+  left: 0;
+  top: 10%;
 }
